@@ -34,11 +34,21 @@ public class BeanFactoryTest {
 
         BeanDefinition bd = factory.getBeanDefinition("petStore");
 
+        Assert.assertTrue(bd.isSingleton());
+        Assert.assertFalse(bd.isPrototype());
+
+        Assert.assertEquals(BeanDefinition.SCOPE_DEFAULT,bd.getScope());
+
         Assert.assertEquals("cn.liueleven.service.v1.PetStoreService",bd.getBeanClassName());
 
         PetStoreService petStore = (PetStoreService) factory.getBean ("petStore");
 
         Assert.assertNotNull(petStore);
+
+        PetStoreService petStore1 = (PetStoreService) factory.getBean ("petStore");
+
+
+        Assert.assertTrue(petStore.equals(petStore1));
     }
 
     @Test

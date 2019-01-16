@@ -10,5 +10,5 @@ import cn.liuleven.beans.BeanDefinition;
 public interface BeanDefinitionRegister {
     BeanDefinition getBeanDefinition(String beanId);
 
-    void RegisterBeanDefinition(String beanId,BeanDefinition bd);
+    void registerBeanDefinition(String beanId,BeanDefinition bd);
 }

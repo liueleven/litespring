@@ -6,7 +6,7 @@ package cn.liueleven.beans;
  * @author: 十一
  */
 public class BeanCreateException extends BeansException{
-    public BeanCreateException(String msg) {
-        super(msg);
+    public BeanCreateException(String msg,Throwable e) {
+        super(msg,e);
     }
 }
